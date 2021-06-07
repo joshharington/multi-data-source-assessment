@@ -76,6 +76,16 @@ When seeding the database (php artisan db:seed) it created a demo user account t
 * Username: **josh1@live.co.za**
 * Password: **12345678a!**
 
+
+### Convert data from truth
+
+Although not part of the requirements, I also included a command that can convert the data from the DB to JSON or from JSON to the DB. This does overwrite the data source that you are converting to, so be careful when running it. The command is:
+
+php artisan data:convert-from {from}
+
+You can specify what you want in place of the **{from}** key above. If you enter **DB**, it will take the data in the database and overwrite the **JSON** datastore file with the data from the database. If you enter JSON, it will take the data in the JSON file, truncate the users table and insert the users into the database. The default password it uses for any of the users is **12345678a!**
+
+
 ### Common Problems
 Common issues that might arise are:
 
